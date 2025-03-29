@@ -486,6 +486,9 @@ Thanks to all the contributors who have helped improve Hash-II through code, fee
 
 ---
 
+![hash1232](https://github.com/user-attachments/assets/ef8ed312-8d3c-4b70-8111-1332eb4a1e6f)
+
+
 <div align="center">
   <p>Made with ❤️ for a more secure and private digital world</p>
   <p>
