@@ -1,7 +1,7 @@
 # Hash-II
 
 <div align="center">
-  <img src="public/android-chrome-192x192.png" alt="Hash-II Logo" width="120" />
+  <img src="https://raw.githubusercontent.com/Saganaki22/Hash-II/refs/heads/main/public/hash-ii.svg" alt="Hash-II Logo" width="120" />
   <h3>A modern, secure Base64 & AES-256 encoder/decoder</h3>
   <p>Educating users about encryption while providing practical cryptographic tools</p>
 </div>
