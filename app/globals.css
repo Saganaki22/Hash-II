@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 70.6% 45.3%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .terminal-textarea {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    resize: none;
+    background-color: transparent;
+    border: none;
+    font-family: var(--font-mono);
+    color: hsl(var(--foreground));
+    font-size: 0.875rem;
+    line-height: 1.7;
+    outline: none;
+    padding: 0;
+  }
+
+  .terminal-textarea::placeholder {
+    color: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: -1;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4gcHFDELpZ6A4QAAAn9JREFUaN7tmsuK1EAYhb+aTozirBxBQXRWMogLQRB05cJH8Q3El/AlXIgLQURduBNEGR0UZzQzTnfn7yK1mE6laZJOprpnmAOFdCfVnar/nPOfulWV5dTpSxDdh0B74CfwuohzVRXOHHK+ADaBTeDMjP9OgPfAW+AV8Bz4A2wVYdZVCLkGPJrDiHPgLfB4ZlQnwEnghwqNbqDnkLsWeBrBiIvAE+AucGUQqzVgBJypQEiW+H0CvAZuLSDiaGiVDiGPIxkB8DUDRyj2n3kLugfcFv3/CvgArOlLdrFDzSskKgFywD3JmAvAPdGHU+C6Gc1lCnkjjDgdjAxCH0QbOXC1DYKRwbS7CnWWAasjkvJ8AZNlimvygbQDjXcWWvMTpqawhTmWc8jYyTEsYTbCvnuVm5BTFzYxUkbyVjmrSElsYnrznfQQDaS2Ja9yXVnUwVMlOZH0fgTrLTfYnedBXE9E3UyItq7BrKUcSe1E2beuMqtQxGLzKIaYvVD7toTPLSWZEBFtdFVuJ1rXwUVK+1aSE6kLa3Md3bqODG1VRuw2JNM6KzNhLUdCa1mKaFOW64TuV1uDnfB9q8V9Kjuq7JCMT77/JXJwElMf60oJY4oZO23Nj/IiDmuv+gIh0xTXXA0+ey52N0yxVh+wbJC2CQypCrlR1UJKy5E14Jvo4z7wvOa9vhgIcxu4IQJVAjeB76pCKRUj9oGzQCN7OsrbI97XFnAG7JcaCVJdTLxnB9XLUdCCuYNgXLc4XwHnRYdZGKDPX4dGxMfcqphkWU/UXrcyC2Wd0K1MmJhrK/MBGk621i9I/I+1lZn+ASIdLtQ8FS04AAAAAElFTkSuQmCC");
+  animation: noise 0.5s steps(10) infinite;
+}
+
+@keyframes noise {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0%);
+  }
+  70% {
+    transform: translate(0%, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0%);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+}
+
+.animate-typing {
+  border-right: 0.15em solid theme("colors.primary.DEFAULT");
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: theme("colors.primary.DEFAULT");
+  }
+}
+
+@layer utilities {
+  .break-words {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
